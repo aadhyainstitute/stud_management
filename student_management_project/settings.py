@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'student_management_app',
     'bootstrap4',
-    'bootstrap5',
 ]
 
 MIDDLEWARE = [
