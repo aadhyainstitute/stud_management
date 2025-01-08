@@ -32,9 +32,6 @@ DEBUG = True
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
-STATIC_URL="/static/"
-STATIC_ROOT=os.path.join(BASE_DIR,"static")
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -156,7 +153,17 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# URL for serving static files
+STATIC_URL = '/static/'
+
+# Directories containing static files during development
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Ensure this points to the root-level 'static' folder
+]
+
+# Directory for collected static files (used in production)
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Separate folder for deployment
 
