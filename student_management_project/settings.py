@@ -88,33 +88,22 @@ WSGI_APPLICATION = 'student_management_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-        
-#     }
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'management_gx27',
-#         'USER': 'management_gx27_user',
-#         'PASSWORD': 'ObuV0laEdrDIXIh8OuXk85yU793AlPF1',
-#         'HOST': 'localhost',  # Use the database host, e.g., '127.0.0.1' or a remote server
-#         'PORT': '5432',       # Default PostgreSQL port
-#     }
-# }
-
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://management_gx27_user:ObuV0laEdrDIXIh8OuXk85yU793AlPF1@dpg-cttp9vggph6c738kug2g-a/management_gx27'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        
+    }
 }
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+# import dj_database_url
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://management_gx27_user:ObuV0laEdrDIXIh8OuXk85yU793AlPF1@dpg-cttp9vggph6c738kug2g-a/management_gx27'
+#     )
+# }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -146,24 +135,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # URL for serving static files
 STATIC_URL = '/static/'
-
-# Directories containing static files during development
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Ensure this points to the root-level 'static' folder
-]
-
-# Directory for collected static files (used in production)
-STATIC_ROOT = BASE_DIR / "staticfiles"  # Separate folder for deployment
 
