@@ -17,6 +17,6 @@ python manage.py migrate
 
 # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic 
+python manage.py collectstatic --noinput
 
 echo "Build script completed successfully."
