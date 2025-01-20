@@ -10,10 +10,21 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+from pathlib import Path
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'  # URL prefix for static files
+
+# Directory where `collectstatic` will gather all static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Directories where Django will look for additional static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Global static folder
+]
 
 # This way we are telling Django to use our custom model instead the default one.
 AUTH_USER_MODEL = 'student_management_app.CustomUser'
@@ -137,8 +148,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# URL for serving static files
-STATIC_URL = '/static/'
 
 
 
