@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'  # URL prefix for static files
 
 # Directory where `collectstatic` will gather all static files
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Directories where Django will look for additional static files
 STATICFILES_DIRS = [
