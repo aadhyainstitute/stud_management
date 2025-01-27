@@ -21,10 +21,6 @@ STATIC_URL = '/static/'  # URL prefix for static files
 # Directory where `collectstatic` will gather all static files
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Directories where Django will look for additional static files
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Global static folder
-]
 
 # This way we are telling Django to use our custom model instead the default one.
 AUTH_USER_MODEL = 'student_management_app.CustomUser'
@@ -57,11 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'student_management_app',
     'bootstrap4',
-    'jquery'
+    'crispy_forms',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -70,10 +68,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://a4e5-2401-4900-1c18-60a4-8c9d-14f2-e5a7-7f8b.ngrok-free.app',  # your Ngrok URL
-    'https://*.ngrok.io',  # If you want to allow all Ngrok URLs (be cautious with this)
-]
 
 ROOT_URLCONF = 'student_management_project.urls'
 
