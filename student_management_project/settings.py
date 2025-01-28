@@ -93,21 +93,21 @@ WSGI_APPLICATION = 'student_management_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        
-    }
-}
-
-# import dj_database_url
-
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgresql://management_gx27_user:ObuV0laEdrDIXIh8OuXk85yU793AlPF1@dpg-cttp9vggph6c738kug2g-a/management_gx27'
-#     )
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+        
+#     }
 # }
+
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://student_management_0mq4_user:LimX58HxMROSSR1BFkpoi5VygycdQ8eR@dpg-cucaub5ds78s73c0o3a0-a.oregon-postgres.render.com/student_management_0mq4'
+    )
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [
